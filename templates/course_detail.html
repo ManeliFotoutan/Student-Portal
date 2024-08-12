@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/course_detail.css') }}">
+</head>
+<body>
+    <div class="course-detail-container">
+        <h1>{{ course.name }}</h1>
+        <p><strong>Description:</strong> {{ course.description }}</p>
+        <p><strong>Teacher:</strong> {{ course.teacher }}</p>
+        <p><strong>Schedule:</strong> {{ course.schedule }}</p>
+        <p><strong>Location:</strong> {{ course.location }}</p>
+        <a class="back-link" href="/courses">Back to Courses</a>
+    </div>
+</body>
+</html>

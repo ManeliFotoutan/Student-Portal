@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <style>
+        /* Add custom styles here if needed */
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Profile</a>
+        <nav class="navbar">
+            <a href="javascript:void(0)" onclick="navigateTo('/')">Home</a>
+            <a href="javascript:void(0)" onclick="navigateTo('/courses')">Courses</a>
+        </nav>
+    </header>
+    <main>
+        <section id="profile-section">
+            <div class="profile-left">
+                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Image"/>
+            </div>
+            <div class="profile-right">
+                <div id="profile-info">
+                    <h1>{{ student.name | capitalize }}</h1>
+                    <p>Email: {{ student.email | lower }}</p>
+                    <p>Major: {{ student.major | upper }}</p>
+                    <a class="edit-link" href="#" onclick="toggleForm()">Update Information</a>
+                </div>
+                
+                <div id="update-form" style="display: none;">
+                    <form method="post" action="/profile/update">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" value="{{ student.name }}" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="{{ student.email }}" required>
+                        
+                        <label for="major">Major:</label>
+                        <input type="text" id="major" name="major" value="{{ student.major }}" required>
+                        
+                        <button type="submit">Update Information</button>
+                        <button type="button" onclick="toggleForm()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+
+</body>
+</html>

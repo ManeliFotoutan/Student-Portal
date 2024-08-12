@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2c2f33; 
+    padding: 0.6rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bolder;
+    font-family: 'Great Vibes', cursive;
+}
+
+header .navbar a {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    color: #ffffff;
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+header .navbar a:hover {
+    color: #989ba3; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background for the body */
+    color: #000000; /* Black text color for readability */
+    margin: 0;
+    padding-top: 80px; /* Adjust padding to avoid overlap with header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.text-box {
+    color: #000000; 
+    position: relative;
+    text-align: center;
+}
+
+.text-box p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.text-box h1 {
+    font-size: 80px;
+    line-height: 90px;
+    color: transparent;
+    -webkit-text-stroke: 1px #000000; 
+    background: url('../images/back0.png');
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 65s linear infinite;
+}
+
+.text-box h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}

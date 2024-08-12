@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Courses</a>
+        <nav class="navbar">
+            <a href="javascript:void(0)" onclick="navigateTo('/')">Home</a>
+            <a href="javascript:void(0)" onclick="navigateTo('/profile')">Profile</a>
+        </nav>
+    </header>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Teacher</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.name }}</td>
+                    <td>{{ course.description | limit_words }}</td>
+                    <td>{{ course.teacher }}</td>
+                    <td><a href="{{ url_for('course_detail', course_id=course.id) }}">View Details</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="add-course" href="/add_course">Add your course</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
