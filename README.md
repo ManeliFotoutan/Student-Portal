@@ -38,7 +38,5 @@ Add new courses by going to /add_course.
 - **Purpose**: Stores course details.
 - **Details**: This JSON file holds information about the courses available in the portal. Each course entry includes details such as the course name, description, teacher, schedule, and location.
 
-## Contact
 
-For any questions, feedback, or inquiries, please reach out to [maneli0foroutan@gmail.com](mailto:maneli0foroutan@gmail.com).
 
